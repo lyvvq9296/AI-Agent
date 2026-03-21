@@ -12,7 +12,8 @@
     "@langchain/deepseek": "^1.0.18",
     "dotenv": "^16.4.5",
     "langchain": "^1.2.35",
-    "openai": "^4.28.0"
+    "openai": "^4.28.0",
+    "zod": "^4.3.6"
   },
   "keywords": [
     "openai",
