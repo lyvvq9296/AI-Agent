@@ -1,5 +1,7 @@
-const OpenAI = require("openai");
-require("dotenv").config();
+import OpenAI from "openai";
+import { config } from "dotenv";
+
+config();
 
 const client = new OpenAI({
   apiKey: process.env.DEEPSEEK_API_KEY,
@@ -36,8 +38,8 @@ async function main() {
   await streamChat(messages);
 }
 
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   main().catch(console.error);
 }
 
-module.exports = { streamChat };
+export { streamChat };
