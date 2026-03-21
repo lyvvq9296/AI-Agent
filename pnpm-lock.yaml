@@ -14,6 +14,9 @@ importers:
       '@langchain/deepseek':
         specifier: ^1.0.18
         version: 1.0.18(@langchain/core@1.1.34(openai@4.104.0(zod@4.3.6)))
+      '@langchain/tavily':
+        specifier: ^1.2.0
+        version: 1.2.0(@langchain/core@1.1.34(openai@4.104.0(zod@4.3.6)))
       dotenv:
         specifier: ^16.4.5
         version: 16.6.1
@@ -84,6 +87,12 @@ packages:
     engines: {node: '>=20'}
     peerDependencies:
       '@langchain/core': ^1.1.33
+
+  '@langchain/tavily@1.2.0':
+    resolution: {integrity: sha512-aPLPgtw8+b/Rnr3H+X8H8z98T/Y7JuCE4B5eqRDHoEWgZvMDUFF7divqwQqCTMq2deQttlVrm5bN5JbKaAR7/w==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@langchain/core': ^1.0.0
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
@@ -440,6 +449,11 @@ snapshots:
       zod: 4.3.6
     transitivePeerDependencies:
       - ws
+
+  '@langchain/tavily@1.2.0(@langchain/core@1.1.34(openai@4.104.0(zod@4.3.6)))':
+    dependencies:
+      '@langchain/core': 1.1.34(openai@4.104.0(zod@4.3.6))
+      zod: 4.3.6
 
   '@standard-schema/spec@1.1.0': {}
 
