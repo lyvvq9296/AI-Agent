@@ -2,6 +2,7 @@
   "name": "AI-Agent",
   "version": "1.0.0",
   "description": "AI Agent 学习项目",
+  "type": "module",
   "main": "",
   "scripts": {
     "start": ""
