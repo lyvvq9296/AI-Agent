@@ -1,4 +1,4 @@
-import { piiMiddleware, summarizationMiddleware } from "langchain";
+import { modelFallbackMiddleware, piiMiddleware, summarizationMiddleware } from "langchain";
 
 const summarization = summarizationMiddleware({
   model: "gpt-4o-mimi",
@@ -17,4 +17,6 @@ const piiCreditCard = piiMiddleware("credit_card", {
   applyToInput: true,
 });
 
-export { summarization, piiEmail, piiCreditCard };
+const modelFallback = modelFallbackMiddleware("gpt-4.1", "gpt-4.1-mini");
+
+export { summarization, piiEmail, piiCreditCard, modelFallback };
