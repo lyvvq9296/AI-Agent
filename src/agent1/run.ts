@@ -6,13 +6,13 @@ async function main() {
   const r1 = await agent.invoke({
     messages: [new HumanMessage("帮我查询一下订单 ORD-001 的状态")],
   });
-  console.log(r1.messages);
+  console.log(r1.structuredResponse);
 
   // 查询天气
   const r2 = await agent.invoke({
     messages: [new HumanMessage("上海今天天气怎么样?")],
   });
-  console.log(r2.messages);
+  console.log(r2.structuredResponse);
 }
 
 main();

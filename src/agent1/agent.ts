@@ -1,6 +1,7 @@
 import { createAgent } from "langchain";
 import llm from "../langchain-learning/llm/index.js";
 import { getWeather, processRefund, queryOrder } from "./tools.ts";
+import z from "zod";
 
 const systemPrompt = `
 你是一个只能客服助手, 负责帮助用户处理以下事务:
@@ -11,10 +12,18 @@ const systemPrompt = `
 回答要简洁明了, 使用中文. 如果用户的请求不在你的能力范围内, 礼貌的告知
 `;
 
+const ResponseFormat = z.object({
+  reply: z.string().describe("给用户的自然语言回复"),
+  actionType: z
+    .enum(["order_query", "weather_query", "refund", "general"])
+    .describe("本次操作的类型"),
+  success: z.boolean().describe("操作是否成功"),
+});
 const agent = createAgent({
   systemPrompt,
   model: llm,
   tools: [queryOrder, getWeather, processRefund],
+  responseFormat: ResponseFormat,
 });
 
 export { agent };
