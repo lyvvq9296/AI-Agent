@@ -3,7 +3,7 @@ import z from "zod";
 import { MemorySaver } from "@langchain/langgraph";
 import llm from "../langchain-learning/llm/index.js";
 import { getWeather, processRefund, queryOrder } from "./tools.ts";
-import { modelFallback, piiCreditCard, piiEmail, summarization } from "./middlewares.ts";
+import { modelFallback, piiCreditCard, piiEmail, summarization, toolRetry } from "./middlewares.ts";
 
 const systemPrompt = `
 你是一个只能客服助手, 负责帮助用户处理以下事务:
@@ -29,7 +29,7 @@ const agent = createAgent({
   tools: [queryOrder, getWeather, processRefund],
   responseFormat: ResponseFormat as any,
   checkpointer,
-  middleware: [summarization, piiEmail, piiCreditCard, modelFallback],
+  middleware: [summarization, piiEmail, piiCreditCard, modelFallback, toolRetry],
 });
 
 export { agent };

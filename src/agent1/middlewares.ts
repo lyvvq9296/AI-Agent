@@ -1,4 +1,9 @@
-import { modelFallbackMiddleware, piiMiddleware, summarizationMiddleware } from "langchain";
+import {
+  modelFallbackMiddleware,
+  piiMiddleware,
+  summarizationMiddleware,
+  toolRetryMiddleware,
+} from "langchain";
 
 const summarization = summarizationMiddleware({
   model: "gpt-4o-mimi",
@@ -19,4 +24,13 @@ const piiCreditCard = piiMiddleware("credit_card", {
 
 const modelFallback = modelFallbackMiddleware("gpt-4.1", "gpt-4.1-mini");
 
-export { summarization, piiEmail, piiCreditCard, modelFallback };
+const toolRetry = toolRetryMiddleware({
+  maxRetries: 2,
+  backoffFactor: 2,
+  initialDelayMs: 1000,
+  maxDelayMs: 10000,
+  jitter: true,
+  onFailure: "continue",
+});
+
+export { summarization, piiEmail, piiCreditCard, modelFallback, toolRetry };
