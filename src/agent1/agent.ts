@@ -2,6 +2,7 @@ import { createAgent } from "langchain";
 import llm from "../langchain-learning/llm/index.js";
 import { getWeather, processRefund, queryOrder } from "./tools.ts";
 import z from "zod";
+import { MemorySaver } from "@langchain/langgraph";
 
 const systemPrompt = `
 你是一个只能客服助手, 负责帮助用户处理以下事务:
@@ -19,11 +20,13 @@ const ResponseFormat = z.object({
     .describe("本次操作的类型"),
   success: z.boolean().describe("操作是否成功"),
 });
+const checkpointer = new MemorySaver();
 const agent = createAgent({
   systemPrompt,
   model: llm,
   tools: [queryOrder, getWeather, processRefund],
   responseFormat: ResponseFormat,
+  checkpointer,
 });
 
 export { agent };
