@@ -1,5 +1,6 @@
 import { END } from "@langchain/langgraph";
 import {
+  humanInTheLoopMiddleware,
   modelCallLimitMiddleware,
   modelFallbackMiddleware,
   piiMiddleware,
@@ -41,4 +42,15 @@ const callLimit = modelCallLimitMiddleware({
   exitBehavior: "end",
 });
 
-export { summarization, piiEmail, piiCreditCard, modelFallback, toolRetry, callLimit };
+const hitl = humanInTheLoopMiddleware({
+  interruptOn: {
+    process_refund: {
+      allowedDecisions: ["approve", "edit", "reject"],
+    },
+    query_order: false,
+    get_weather: false,
+  },
+  descriptionPrefix: "需要人工审批",
+});
+
+export { summarization, piiEmail, piiCreditCard, modelFallback, toolRetry, callLimit, hitl };

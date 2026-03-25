@@ -5,6 +5,7 @@ import llm from "../langchain-learning/llm/index.js";
 import { getWeather, processRefund, queryOrder } from "./tools.ts";
 import {
   callLimit,
+  hitl,
   modelFallback,
   piiCreditCard,
   piiEmail,
@@ -36,7 +37,7 @@ const agent = createAgent({
   tools: [queryOrder, getWeather, processRefund],
   responseFormat: ResponseFormat as any,
   checkpointer,
-  middleware: [piiEmail, piiCreditCard, callLimit, modelFallback, toolRetry, summarization],
+  middleware: [piiEmail, piiCreditCard, callLimit, modelFallback, hitl, toolRetry, summarization],
 });
 
 export { agent };
