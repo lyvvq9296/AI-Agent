@@ -1,4 +1,6 @@
+import { END } from "@langchain/langgraph";
 import {
+  modelCallLimitMiddleware,
   modelFallbackMiddleware,
   piiMiddleware,
   summarizationMiddleware,
@@ -33,4 +35,10 @@ const toolRetry = toolRetryMiddleware({
   onFailure: "continue",
 });
 
-export { summarization, piiEmail, piiCreditCard, modelFallback, toolRetry };
+const callLimit = modelCallLimitMiddleware({
+  runLimit: 10,
+  threadLimit: 100,
+  exitBehavior: "end",
+});
+
+export { summarization, piiEmail, piiCreditCard, modelFallback, toolRetry, callLimit };
