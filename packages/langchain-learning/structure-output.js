@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { SystemMessage, HumanMessage } from "@langchain/core/messages";
-import llm from "./llm/index.js";
+import llm from "llm-core";
 
 // 定义结构化输出的 Zod schema
 const PersonSchema = z.object({

@@ -1,6 +1,6 @@
 import { FewShotPromptTemplate, PromptTemplate } from "@langchain/core/prompts";
 import { SystemMessage, HumanMessage } from "@langchain/core/messages";
-import llm from "./llm/index.js";
+import llm from "llm-core";
 
 const examples = [
   {

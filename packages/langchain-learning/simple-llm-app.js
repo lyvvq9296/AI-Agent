@@ -1,5 +1,5 @@
 import { ChatPromptTemplate } from "@langchain/core/prompts";
-import llm from "./llm/index.js";
+import llm from "llm-core";
 
 // import { SystemMessage, HumanMessage } from "langchain";
 // const messages = [new SystemMessage("把下面的中文翻译成意大利语"), new HumanMessage("你好啊")];

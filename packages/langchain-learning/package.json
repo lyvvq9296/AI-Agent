@@ -15,6 +15,7 @@
     "langchain": "^1.2.35",
     "openai": "^4.28.0",
     "uuid": "^13.0.0",
-    "zod": "^4.3.6"
+    "zod": "^4.3.6",
+    "llm-core": "workspace:*"
   }
 }

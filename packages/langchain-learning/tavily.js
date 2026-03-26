@@ -1,6 +1,6 @@
 import { TavilySearch } from "@langchain/tavily";
 import { SystemMessage, HumanMessage } from "@langchain/core/messages";
-import llm from "./llm/index.js";
+import llm from "llm-core";
 
 // 创建 Tavily 搜索工具
 const tavilyTool = new TavilySearch({

@@ -28,7 +28,7 @@
 - 环境变量文件位于项目根目录（../.env）
 
 ### 跨包引用
-- LLM 实例从 `../langchain-learning/llm/index.js` 导入
+- LLM 实例从 `llm-core` 导入
 - 确保 langchain-learning 包已正确配置
 
 ### 中间件功能

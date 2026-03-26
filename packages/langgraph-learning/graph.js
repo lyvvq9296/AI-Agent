@@ -1,6 +1,6 @@
 import { SystemMessage, tool } from "langchain";
 import z from "zod";
-import llm from "../langchain-learning/llm/index.js";
+import llm from "llm-core";
 import { registry } from "@langchain/langgraph/zod";
 import { END, MemorySaver, MessagesZodMeta, START, StateGraph } from "@langchain/langgraph";
 import { AIMessage, HumanMessage } from "@langchain/core/messages";

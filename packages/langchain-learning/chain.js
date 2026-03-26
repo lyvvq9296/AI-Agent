@@ -1,5 +1,5 @@
 import { ChatPromptTemplate } from "@langchain/core/prompts";
-import llm from "./llm/index.js";
+import llm from "llm-core";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { RunnableLambda } from "@langchain/core/runnables";
 

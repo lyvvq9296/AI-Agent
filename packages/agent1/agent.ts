@@ -1,7 +1,7 @@
 import { createAgent } from "langchain";
 import z from "zod";
 import { MemorySaver } from "@langchain/langgraph";
-import llm from "../langchain-learning/llm/index.js";
+import llm from "llm-core";
 import { getWeather, processRefund, queryOrder } from "./tools.ts";
 import {
   callLimit,

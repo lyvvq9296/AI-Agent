@@ -1,5 +1,5 @@
 import { HumanMessage, SystemMessage, ToolMessage, tool } from "langchain";
-import llm from "../langchain-learning/llm/index.js";
+import llm from "llm-core";
 import { addMessages, entrypoint, getPreviousState, MemorySaver, task } from "@langchain/langgraph";
 import z from "zod";
 import { v4 as uuidv4 } from "uuid";

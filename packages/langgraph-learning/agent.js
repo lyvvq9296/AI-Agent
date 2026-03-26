@@ -1,6 +1,6 @@
 import { createAgent, tool } from "langchain";
 import z from "zod";
-import llm from "../langchain-learning/llm/index.js";
+import llm from "llm-core";
 import { MemorySaver } from "@langchain/langgraph";
 
 const systemPrompt = `You are an expert weather forecaster, who speaks in puns.

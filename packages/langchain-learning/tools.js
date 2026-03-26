@@ -1,6 +1,6 @@
 import { tool } from "@langchain/core/tools";
 import z from "zod";
-import llm from "./llm/index.js";
+import llm from "llm-core";
 
 const calculatorSchema = z.object({
   operation: z
