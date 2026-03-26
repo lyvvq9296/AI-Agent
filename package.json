@@ -1,13 +1,13 @@
 {
-  "name": "AI-Agent",
+  "name": "ai-agent-monorepo",
   "version": "1.0.0",
-  "description": "AI Agent 学习项目",
+  "description": "AI Agent 学习项目 - Monorepo",
+  "private": true,
   "type": "module",
-  "main": "",
   "scripts": {
-    "start": ""
+    "start": "echo \"请进入具体子包运行，例如: cd packages/agent1 && npm start\""
   },
-  "dependencies": {
+  "devDependencies": {
     "@langchain/core": "^1.1.34",
     "@langchain/deepseek": "^1.0.18",
     "@langchain/langgraph": "^1.2.5",
@@ -16,13 +16,16 @@
     "langchain": "^1.2.35",
     "openai": "^4.28.0",
     "uuid": "^13.0.0",
-    "zod": "^4.3.6"
+    "zod": "^4.3.6",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
   },
   "keywords": [
     "openai",
     "deepseek",
     "stream",
-    "api"
+    "api",
+    "monorepo"
   ],
   "author": "",
   "license": "MIT"
