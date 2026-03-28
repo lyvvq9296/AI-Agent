@@ -1,4 +1,4 @@
-import { createResumeOptimizationAgent } from "./agent.js";
+import createModularResumeOptimizationAgent from "./agent.js";
 import readline from "readline";
 
 // 创建命令行界面
@@ -76,7 +76,7 @@ async function main() {
 
       try {
         // 创建优化 Agent
-        const agent = createResumeOptimizationAgent();
+        const agent = createModularResumeOptimizationAgent();
 
         console.log("开始分析简历...\n");
 
@@ -147,7 +147,7 @@ function displayOptimizationResult(result) {
 }
 
 // 导出主要功能供其他模块使用
-export { createResumeOptimizationAgent };
+export { createModularResumeOptimizationAgent };
 
 // 如果直接运行此文件，启动命令行界面
 if (import.meta.url === `file://${process.argv[1]}`) {
