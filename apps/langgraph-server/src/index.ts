@@ -1,18 +1,18 @@
 import dotenv from "dotenv";
+import app from "./agent/graph.js";
 
 // Load environment variables
 dotenv.config();
 
-const PORT = process.env.PORT || 3001;
-const NODE_ENV = process.env.NODE_ENV || "development";
-
-console.log("🚀 LangGraph Server starting...");
-console.log(`Environment: ${NODE_ENV}`);
-console.log(`Port: ${PORT}`);
-
-// Your application code here
-function main() {
-  console.log("✅ Server initialized successfully!");
+// Check if DeepSeek API key is available
+if (!process.env.DEEPSEEK_API_KEY) {
+  console.error("❌ DEEPSEEK_API_KEY environment variable is required");
+  console.error("Please set DEEPSEEK_API_KEY in your .env file");
+  process.exit(1);
 }
 
-main();
+console.log("🚀 LangGraph Agent Server starting...");
+console.log("✅ Agent workflow compiled successfully!");
+
+// Export the app for langgraph-cli
+export default app;
