@@ -42,3 +42,5 @@ workflow.addNode("agent", agentNode).addEdge(START, "agent").addEdge("agent", EN
 const app = workflow.compile();
 
 export default app;
+
+export const graph = app;

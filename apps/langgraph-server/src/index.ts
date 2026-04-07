@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import app from "./agent/graph.js";
+import app from "./agent/index.js";
 
 // Load environment variables
 dotenv.config();
