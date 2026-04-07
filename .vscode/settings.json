@@ -3,6 +3,7 @@
 		"deepseek",
 		"langchain",
 		"langgraph",
-		"langgraphjs"
+		"langgraphjs",
+		"tavily"
 	]
 }
